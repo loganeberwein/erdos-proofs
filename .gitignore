@@ -1,0 +1,28 @@
+# Lean / Lake build artifacts
+.lake/
+lake-packages/
+build/
+*.olean
+*.ilean
+*.trace
+*.c.o
+*.hash
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# LaTeX intermediates (papers are committed as PDF)
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls

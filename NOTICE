@@ -1,0 +1,38 @@
+erdos-proofs
+Copyright 2026 Logan Eberwein
+
+This repository is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+-------------------------------------------------------------------------------
+Third-party code: 1139/lean
+-------------------------------------------------------------------------------
+
+The directory 1139/lean contains code from
+
+    https://github.com/openai/LongGapsBetweenPrimes
+    upstream commit 03a1190d0bc5502d9f54eeb60ad3e45e22b0df0b
+    Copyright OpenAI
+    Licensed under the Apache License, Version 2.0 (a copy is in 1139/lean/LICENSE)
+
+modified by Logan Eberwein. Changes made:
+
+1. LongGapsBetweenPrimes.lean: ADDED three declarations, inserted immediately
+   after `short_translates`:
+     - lemma   eventually_sieveY_mul_floor_lt_primorial
+     - theorem short_translates_divisor_with_sieveDelta
+     - theorem short_translates_divisor
+   and ADDED two `#print axioms` commands for the two new theorems at the end of
+   the file. No existing statement or proof was changed. The exact diff is
+   1139/short_translates_divisor.diff; details are in 1139/lean/CHANGES.md.
+
+2. lakefile.toml: ADDED a `lean_lib` target `Erdos1139Sketch` and added it to
+   `defaultTargets`, so that the new file Erdos1139Sketch.lean is built.
+   Dependencies and their pinned revisions are unchanged.
+
+3. ADDED new files (not derived from upstream): Erdos1139Sketch.lean,
+   CHANGES.md.
+
+4. The upstream README.md is kept, renamed to UPSTREAM_README.md.
+
+Unmodified upstream files: Challenge.lean, LICENSE, lake-manifest.json,
+lean-toolchain, comparator.json, formalization.yaml.
