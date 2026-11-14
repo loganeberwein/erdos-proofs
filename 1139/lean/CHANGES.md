@@ -66,7 +66,7 @@ The witness is δ = `sieveDelta`, the same δ used by `short_translates`.
 
 - `lakefile.toml`: added `lean_lib` `Erdos1139Sketch` and added it to `defaultTargets`.
   The `require` blocks, `lean-toolchain` and `lake-manifest.json` are unchanged.
-- New file `Erdos1139Sketch.lean`: an **incomplete** top-level sketch of Erdős #1139. It
+- New file `Erdos1139Sketch.lean`: an **incomplete** formalization of Erdős #1139. It
   contains `sorry`s, each tagged `TODO(n)` with the gap it stands for.
 - Upstream `README.md` renamed to `UPSTREAM_README.md`.
 

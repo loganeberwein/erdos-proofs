@@ -44,13 +44,13 @@ infinite.
 | Component | Status |
 |---|---|
 | Strengthened Proposition 1.2 (`short_translates_divisor`, `short_translates_divisor_with_sieveDelta`) | **Lean-verified** (axioms: `propext`, `Classical.choice`, `Quot.sound` only) |
-| The case of positions hit exactly once (step 4) | Formalized in the sketch [`lean/Erdos1139Sketch.lean`](lean/Erdos1139Sketch.lean), modulo the sketch's other gaps |
-| Lemmas 2 to 5 (covering, greedy step, double hits, upper-bound sieve) | Written proof in the paper; not yet formalized |
-| Full Lean proof of `erdos_1139` | In progress, on branch `full-formalization-1139` |
+| Reduction: covering data plus `short_translates_divisor` gives `erdos_1139` (steps 1, 3, 4; CRT; Ω ≥ 3; size of N; `Nat.nth` gap; `EReal` limsup) | **Lean-verified on this branch**, in [`lean/Erdos1139Sketch.lean`](lean/Erdos1139Sketch.lean), assuming `eventually_cover` |
+| `eventually_cover` (step 2: greedy step, smooth count, double hits, upper-bound sieve) | Written proof only; **one `sorry`**, still to be formalized |
+| Full Lean proof of `erdos_1139` | Not complete: it depends on the `sorry` in `eventually_cover` |
 
-> **The sketch is incomplete.** `Erdos1139Sketch.lean` compiles, but it contains `sorry`s.
-> Each one is tagged `TODO(n)` with the gap it stands for. It is **not** a formal proof of
-> Erdős Problem #1139. Only `LongGapsBetweenPrimes.lean` is sorry-free, and CI enforces that.
+> **The formalization is incomplete.** `Erdos1139Sketch.lean` compiles with exactly one
+> `sorry`, in `eventually_cover` (tagged `TODO(2)-(5)`). It is **not** yet a formal proof of
+> Erdős Problem #1139. Only `LongGapsBetweenPrimes.lean` is sorry-free.
 
 What was changed relative to OpenAI's repository, with the exact Lean statements and the
 axiom output, is in [`lean/CHANGES.md`](lean/CHANGES.md). The diff is
