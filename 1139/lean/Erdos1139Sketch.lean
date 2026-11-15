@@ -1,13 +1,12 @@
 import LongGapsBetweenPrimes
+import Erdos1139Cover
 
 /-!
-# Erdős Problem 1139 from `short_translates_divisor` (formalization in progress)
+# Erdős Problem 1139 from `short_translates_divisor`
 
-INCOMPLETE. The only remaining `sorry` is `eventually_cover`, tagged `TODO(2)-(5)`: the
-covering construction (greedy residues, smooth-number count, double hits from primes in
-`(x/2, x]`, and the upper-bound sieve for positions hit exactly once). Everything else,
-including the reduction of `erdos_1139` to `eventually_cover`, is proved. This file is
-therefore *not* yet a proof of Erdős Problem 1139.
+A complete, `sorry`-free proof of `erdos_1139`. The covering construction behind
+`eventually_cover` is in `Erdos1139Cover`; everything else (CRT, `Ω ≥ 3`, the size of the
+shifted base point, the `Nat.nth` gap and the `EReal` limsup) is in this file.
 
 The target statement is copied verbatim from google-deepmind/formal-conjectures,
 `FormalConjectures/ErdosProblems/1139.lean` (there `Ω` is `ArithmeticFunction.cardFactors`).
@@ -103,16 +102,18 @@ structure CoverData (x : ℝ) (H : ℕ) (δ : ℝ) where
     (fun j => ((⌊x⌋₊).primesLE.filter (fun p => j % p = a p)).card = 1)
   S₁_card : (S₁.card : ℝ) ≤ δ * x
 
-/-- The covering lemma (Lemmas 2 to 5 of the paper). Not yet formalized. It needs:
-* TODO(2) greedy residue choice for `w < p ≤ z` (`greedy_residue_classes`,
-  `eventually_greedy_product_bound` in `LongGapsBetweenPrimes` are close relatives);
-* TODO(3) smooth-number count for survivors (cf. `eventually_smooth_count`);
-* TODO(4) double hits: primes in `(x/2, x]` are numerous enough (Chebyshev) to give each
-  remaining unhit position two distinct hits;
-* TODO(5) upper-bound sieve: the positions hit exactly once number `o(x)`. -/
+/-- TODO(2)-(5), closed. The covering lemma, from `Erdos1139Cover.eventually_cover_residues`
+(zero and greedy residues at scale `x/4`, one prime of `(x/4, x]` per survivor, and a
+second-moment bound for the positions hit exactly once). -/
 lemma eventually_cover (C : ℝ) (hC : 1 ≤ C) (δ : ℝ) (hδ : 0 < δ) :
     ∀ᶠ x : ℝ in atTop, Nonempty (CoverData x (runLength C x) δ) := by
-  sorry -- TODO(2)-(5): greedy residues, smooth count, double hits, upper-bound sieve.
+  filter_upwards [Erdos1139Cover.eventually_cover_residues C δ hC hδ,
+    eventually_ge_atTop (1 : ℝ)] with x hcov hx
+  have hH0 : 0 ≤ 3 * C * x := mul_nonneg (by linarith) (by linarith)
+  obtain ⟨a, ha, hhit, hS₁⟩ := hcov (runLength C x)
+    (by unfold runLength; have := Nat.lt_floor_add_one (3 * C * x); nlinarith)
+    (Nat.floor_le hH0)
+  exact ⟨⟨a, ha, hhit, _, rfl, hS₁⟩⟩
 
 /-! ### Chinese remainder step and bookkeeping -/
 
@@ -258,8 +259,7 @@ lemma gap_of_run {N H : ℕ} (hN : 1 ≤ N) (hrun : ∀ j ∈ Finset.Icc 1 H, 3 
     have hmem' : 0 < m ∧ Ω m ≤ 2 := hmem
     omega
 
-/-- Erdős Problem 1139, in the exact form of formal-conjectures. Proved here modulo
-`eventually_cover` (TODO(2)-(5)). TODO(12), the `EReal` bookkeeping, is closed. -/
+/-- Erdős Problem 1139, in the exact form of formal-conjectures. -/
 theorem erdos_1139 :
     letI u := Nat.nth (fun n ↦ 0 < n ∧ Ω n ≤ 2)
     atTop.limsup (fun k : ℕ ↦ (((u (k + 1) : ℝ) - (u k : ℝ)) / Real.log (↑k + 1) : EReal))
