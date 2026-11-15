@@ -1,0 +1,58 @@
+name: Lean (1139)
+
+on:
+  push:
+    paths:
+      - "1139/lean/**"
+      - ".github/workflows/lean-1139.yml"
+  pull_request:
+    paths:
+      - "1139/lean/**"
+      - ".github/workflows/lean-1139.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: 1139/lean
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Forbid sorry / admit / native_decide in the verified file
+        run: |
+          if grep -nwE 'sorry|admit|native_decide' LongGapsBetweenPrimes.lean; then
+            echo "::error::forbidden keyword in LongGapsBetweenPrimes.lean"
+            exit 1
+          fi
+          if grep -nE '^\s*axiom\s' LongGapsBetweenPrimes.lean; then
+            echo "::error::axiom declaration in LongGapsBetweenPrimes.lean"
+            exit 1
+          fi
+
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Fetch Mathlib cache
+        run: lake exe cache get
+
+      - name: Build
+        run: lake build
+
+      - name: Check axioms of the verified theorems
+        run: |
+          cat > /tmp/Axioms.lean <<'EOF'
+          import LongGapsBetweenPrimes
+          #print axioms LongGapsBetweenPrimes.short_translates
+          #print axioms LongGapsBetweenPrimes.short_translates_divisor
+          #print axioms LongGapsBetweenPrimes.short_translates_divisor_with_sieveDelta
+          EOF
+          lake env lean /tmp/Axioms.lean | tee /tmp/axioms.txt
+          if grep -q sorryAx /tmp/axioms.txt; then
+            echo "::error::sorryAx in axioms"; exit 1
+          fi
