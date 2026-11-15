@@ -50,7 +50,10 @@ infinite.
 | Reduction to `short_translates_divisor` (steps 1, 3, 4; CRT; Ω ≥ 3; size of N; `Nat.nth` gap; `EReal` limsup) | **Lean-verified**, in [`lean/Erdos1139Sketch.lean`](lean/Erdos1139Sketch.lean) |
 | Full Lean proof of `erdos_1139` (statement copied verbatim from formal-conjectures) | **Lean-verified**, axioms `propext`, `Classical.choice`, `Quot.sound` only |
 
-No file contains `sorry`, `admit`, `native_decide` or a new `axiom`.
+[`lean/Erdos1139Official.lean`](lean/Erdos1139Official.lean) restates the formal-conjectures
+theorem verbatim (only imports adapted) and proves it by `exact Erdos1139Sketch.erdos_1139`.
+CI checks all four Lean files for `sorry`, `admit`, `native_decide` and `axiom`, and checks
+that each main theorem depends only on `propext`, `Classical.choice` and `Quot.sound`.
 
 What was changed relative to OpenAI's repository, with the exact Lean statements and the
 axiom output, is in [`lean/CHANGES.md`](lean/CHANGES.md). The diff is

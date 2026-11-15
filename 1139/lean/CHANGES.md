@@ -71,6 +71,12 @@ The witness is δ = `sieveDelta`, the same δ used by `short_translates`.
 - New file `Erdos1139Sketch.lean`: the reduction and the final theorem `erdos_1139`, whose
   statement is copied verbatim from google-deepmind/formal-conjectures.
 - Upstream `README.md` renamed to `UPSTREAM_README.md`.
+- New file `Erdos1139Official.lean`: the statement of `erdos_1139` copied verbatim from
+  google-deepmind/formal-conjectures (`FormalConjectures/ErdosProblems/1139.lean`, commit
+  `7db2ea3b91bfbd0ab620215163e6c488bbb916d5`), proved by `exact Erdos1139Sketch.erdos_1139`.
+  Only the imports were adapted, and the documentation attribute `@[category ...]`
+  (defined in `FormalConjecturesUtil`) was dropped. Its namespace `Erdos1139` is the upstream
+  one.
 
 ## The covering construction (`Erdos1139Cover.lean`)
 

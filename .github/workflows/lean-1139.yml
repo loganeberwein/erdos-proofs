@@ -21,16 +21,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Forbid sorry / admit / native_decide in the verified file
+      - name: Forbid sorry / admit / native_decide / axiom in the Lean files
         run: |
-          if grep -nwE 'sorry|admit|native_decide' LongGapsBetweenPrimes.lean; then
-            echo "::error::forbidden keyword in LongGapsBetweenPrimes.lean"
-            exit 1
-          fi
-          if grep -nE '^\s*axiom\s' LongGapsBetweenPrimes.lean; then
-            echo "::error::axiom declaration in LongGapsBetweenPrimes.lean"
-            exit 1
-          fi
+          FILES="LongGapsBetweenPrimes.lean Erdos1139Cover.lean Erdos1139Sketch.lean Erdos1139Official.lean"
+          status=0
+          for f in $FILES; do
+            test -f "$f" || { echo "::error::missing $f"; status=1; continue; }
+            # Erdos1139Sketch.lean says "`sorry`-free" in its module docstring; allow only that.
+            if grep -nwE 'sorry|admit|native_decide' "$f" | grep -v '`sorry`-free'; then
+              echo "::error::forbidden keyword in $f"; status=1
+            fi
+            if grep -nE '^\s*axiom\s' "$f"; then
+              echo "::error::axiom declaration in $f"; status=1
+            fi
+          done
+          exit $status
 
       - name: Install elan
         run: |
@@ -47,12 +52,19 @@ jobs:
       - name: Check axioms of the verified theorems
         run: |
           cat > /tmp/Axioms.lean <<'EOF'
-          import LongGapsBetweenPrimes
+          import Erdos1139Official
           #print axioms LongGapsBetweenPrimes.short_translates
           #print axioms LongGapsBetweenPrimes.short_translates_divisor
           #print axioms LongGapsBetweenPrimes.short_translates_divisor_with_sieveDelta
+          #print axioms Erdos1139Cover.eventually_cover_residues
+          #print axioms Erdos1139Sketch.erdos_1139
+          #print axioms Erdos1139.erdos_1139
           EOF
           lake env lean /tmp/Axioms.lean | tee /tmp/axioms.txt
-          if grep -q sorryAx /tmp/axioms.txt; then
-            echo "::error::sorryAx in axioms"; exit 1
+          # Every theorem must depend on exactly the three standard axioms.
+          tr -d ' \n' < /tmp/axioms.txt | grep -o "dependsonaxioms:\[[^]]*\]" > /tmp/deps.txt
+          cat /tmp/deps.txt
+          test "$(wc -l < /tmp/deps.txt)" -eq 6 || { echo "::error::expected 6 axiom reports"; exit 1; }
+          if grep -v -x 'dependsonaxioms:\[propext,Classical.choice,Quot.sound\]' /tmp/deps.txt; then
+            echo "::error::non-standard axioms"; exit 1
           fi
