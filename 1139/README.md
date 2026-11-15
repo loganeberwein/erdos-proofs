@@ -24,10 +24,12 @@ infinite.
 1. **Erdős–Rankin construction.** For each prime $p \le x$ choose a residue $a_p$. Then
    pick $b$ by the Chinese remainder theorem with $b \equiv -a_p \pmod p$, so $p$
    divides $b + Qt + j$ whenever $j \equiv a_p \pmod p$, where $Q = \prod_{p \le x} p$.
-2. **Small primes hit almost every position twice.** Residue $a_p = 0$ for the small and
-   medium primes, a greedy choice for an intermediate range, and the primes in
-   $(x/2, x]$ together make sure every position $j \in [1, H]$ is hit, and all but
-   $o(x)$ positions are hit by at least two distinct primes.
+2. **Every position is hit, and almost every position twice.** At scale $y = x/4$: residue
+   $a_p = 0$ for the small and large primes of OpenAI's zero cover, and a greedy choice for
+   the auxiliary range. The few survivors number fewer than the primes in $(x/4, x]$
+   (Chebyshev), so each survivor gets its own prime there. A position hit only once has at
+   most one divisor in a fixed finite set $F$ of primes with $\sum_{p \in F} 1/p$ large, and
+   a second-moment bound shows there are at most $\delta x$ such positions.
 3. **Two chosen prime factors give three.** If two distinct chosen primes $p, q \le x$
    divide $n = b + Qt + j$, then $pq \le x^2$, which is far smaller than $n$. So
    $n = pq \cdot m$ with $m \ge 2$, and $\Omega(n) \ge 3$.
@@ -43,14 +45,15 @@ infinite.
 
 | Component | Status |
 |---|---|
-| Strengthened Proposition 1.2 (`short_translates_divisor`, `short_translates_divisor_with_sieveDelta`) | **Lean-verified** (axioms: `propext`, `Classical.choice`, `Quot.sound` only) |
-| The case of positions hit exactly once (step 4) | Formalized in the sketch [`lean/Erdos1139Sketch.lean`](lean/Erdos1139Sketch.lean), modulo the sketch's other gaps |
-| Lemmas 2 to 5 (covering, greedy step, double hits, upper-bound sieve) | Written proof in the paper; not yet formalized |
-| Full Lean proof of `erdos_1139` | In progress, on branch `full-formalization-1139` |
+| Strengthened Proposition 1.2 (`short_translates_divisor`, `short_translates_divisor_with_sieveDelta`) | **Lean-verified** |
+| Covering construction (`eventually_cover_residues`, step 2) | **Lean-verified**, in [`lean/Erdos1139Cover.lean`](lean/Erdos1139Cover.lean) |
+| Reduction to `short_translates_divisor` (steps 1, 3, 4; CRT; Ω ≥ 3; size of N; `Nat.nth` gap; `EReal` limsup) | **Lean-verified**, in [`lean/Erdos1139Sketch.lean`](lean/Erdos1139Sketch.lean) |
+| Full Lean proof of `erdos_1139` (statement copied verbatim from formal-conjectures) | **Lean-verified**, axioms `propext`, `Classical.choice`, `Quot.sound` only |
 
-> **The sketch is incomplete.** `Erdos1139Sketch.lean` compiles, but it contains `sorry`s.
-> Each one is tagged `TODO(n)` with the gap it stands for. It is **not** a formal proof of
-> Erdős Problem #1139. Only `LongGapsBetweenPrimes.lean` is sorry-free, and CI enforces that.
+[`lean/Erdos1139Official.lean`](lean/Erdos1139Official.lean) restates the formal-conjectures
+theorem verbatim (only imports adapted) and proves it by `exact Erdos1139Sketch.erdos_1139`.
+CI checks all four Lean files for `sorry`, `admit`, `native_decide` and `axiom`, and checks
+that each main theorem depends only on `propext`, `Classical.choice` and `Quot.sound`.
 
 What was changed relative to OpenAI's repository, with the exact Lean statements and the
 axiom output, is in [`lean/CHANGES.md`](lean/CHANGES.md). The diff is
@@ -77,7 +80,7 @@ build on GitHub's runners and may take over an hour. It fails if `sorry`, `admit
 - The argument was worked out with **Claude** (Anthropic).
 - The estimates were reviewed with **ChatGPT** (OpenAI).
 - **Claude Code** (Anthropic) built OpenAI's Lean project and extended it with the new
-  theorems, and wrote the formalization sketch.
+  theorems, and wrote the formalization of `erdos_1139`.
 - The key input is OpenAI's Proposition 1.2 (*Short translates*) and its Lean
   formalization in [openai/LongGapsBetweenPrimes](https://github.com/openai/LongGapsBetweenPrimes).
   The paper's abstract says "The proof is due to GPT 6 Astra."
