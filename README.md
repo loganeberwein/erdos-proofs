@@ -1,5 +1,7 @@
 # Erdős problem proofs
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24241058.svg)](https://doi.org/10.5281/zenodo.24241058)
+
 Proofs of problems from [erdosproblems.com](https://www.erdosproblems.com), with Lean 4
 formalizations where available. Each problem lives in its own folder, named by its
 number on erdosproblems.com (for example [`1139/`](1139/)). A folder holds a README with
@@ -14,7 +16,7 @@ folder for the written proof; and, where one exists, a self-contained Lean proje
 
 | Problem | Status | Paper | Lean |
 |---|---|---|---|
-| [#1139](https://www.erdosproblems.com/1139) | Proof posted; Lean verification of the key input complete; full formalization in progress | [`1139/paper/`](1139/paper/) | [`1139/lean/`](1139/lean/) |
+| [#1139](https://www.erdosproblems.com/1139) | Proof posted; complete Lean proof of the formal-conjectures statement (release [1139-v2.0](https://github.com/loganeberwein/erdos-proofs/releases/tag/1139-v2.0)) | [`1139/paper/`](1139/paper/) | [`1139/lean/`](1139/lean/) |
 
 ## AI use
 

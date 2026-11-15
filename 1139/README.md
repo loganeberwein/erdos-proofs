@@ -13,6 +13,8 @@ $$\limsup_{k\to\infty} \frac{u_{k+1}-u_k}{\log k} = \infty \;?$$
   <https://google-deepmind.github.io/formal-conjectures/FormalConjectures/ErdosProblems/1139.html>
 - Key input, OpenAI, *Improved Long Gaps Between Primes*:
   <https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/long_gaps.pdf>
+- Citation: release 1139-v2.0, Zenodo DOI
+  [10.5281/zenodo.24241059](https://doi.org/10.5281/zenodo.24241059)
 
 ## Proof summary (plain language)
 
