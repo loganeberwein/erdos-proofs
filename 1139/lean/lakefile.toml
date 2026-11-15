@@ -1,6 +1,6 @@
 name = "LongGapsBetweenPrimes"
 version = "0.1.0"
-defaultTargets = ["LongGapsBetweenPrimes", "Erdos1139Sketch"]
+defaultTargets = ["LongGapsBetweenPrimes", "Erdos1139Cover", "Erdos1139Sketch"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -29,6 +29,9 @@ name = "LongGapsBetweenPrimes"
 
 [[lean_lib]]
 name = "Challenge"
+
+[[lean_lib]]
+name = "Erdos1139Cover"
 
 [[lean_lib]]
 name = "Erdos1139Sketch"
