@@ -79,16 +79,27 @@ build on GitHub's runners and may take over an hour. It fails if `sorry`, `admit
 
 ## AI assistance
 
-- The argument was worked out with **Claude** (Anthropic).
-- The estimates were reviewed with **ChatGPT** (OpenAI).
-- **Claude Code** (Anthropic) built OpenAI's Lean project and extended it with the new
-  theorems, and wrote the formalization of `erdos_1139`.
+- **Claude Opus 5.5** (Anthropic), in chat, did the mathematical work: it found the route
+  through OpenAI's Proposition 1.2 and worked out the argument and the paper.
+- **ChatGPT** (OpenAI) reviewed and expanded the estimates in Lemmas 2–5 of the paper.
+- **Claude Code** (Anthropic, also on Opus 5.5) built OpenAI's Lean project, extended it
+  with the new theorems, and wrote the formalization of `erdos_1139`.
 - The key input is OpenAI's Proposition 1.2 (*Short translates*) and its Lean
-  formalization in [openai/LongGapsBetweenPrimes](https://github.com/openai/LongGapsBetweenPrimes).
-  The paper's abstract says "The proof is due to GPT 6 Astra."
+  formalization in [openai/LongGapsBetweenPrimes](https://github.com/openai/LongGapsBetweenPrimes),
+  released in September 2026. The paper's abstract says "The proof is due to GPT 6 Astra."
 
-The author checked and takes responsibility for everything posted here. AI tools are not
-authors.
+The author directed the work, checked it, and takes responsibility for everything posted
+here. AI tools are not authors.
+
+## Independent check
+
+[Erdős Problem a Day](https://erdosproblemaday.com/day/1139-eberwein-lean-proof-rebuilt)
+rebuilt release 1139-v2.0 on 16 November 2026 and confirmed that `erdos_1139` depends
+only on `propext`, `Classical.choice` and `Quot.sound`. They checked the statement against
+Formal Conjectures' statement compiled with only Mathlib in scope, and Lean rejected the
+proof at three altered statements. They called it the first complete Lean proof of #1139
+they know of that assumes nothing. Their check is a machine check. No human expert has
+refereed the paper.
 
 ## Prior work and credits
 
@@ -107,4 +118,8 @@ From the [forum thread](https://www.erdosproblems.com/forum/thread/1139):
 - **Liam Price** ([19 Jun 2026](https://www.erdosproblems.com/forum/thread/1139#post-7063))
   posted a claimed solution produced with GPT Pro, using a different (Green–Tao based)
   hypergraph-covering argument. **Nat Sothanaphan** screened it and found no issues apart
-  from a typo.
+  from a typo. Erdős Problem a Day reported that it could not audit
+  this proof.
+- **Linmiao Xu** (5 Oct 2026) posted a Lean proof of the Formal Conjectures statement that
+  is conditional on a hypothesis standing in for Green and Tao's linear-forms theorem,
+  which is not in Mathlib.
