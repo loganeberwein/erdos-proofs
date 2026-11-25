@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "erdos-proofs"
+title: "open-problems"
 authors:
   - family-names: "Eberwein"
     given-names: "Logan"
@@ -9,7 +9,7 @@ doi: "10.5281/zenodo.24241059"
 version: "1139-v2.0"
 date-released: "2026-11-15"
 license: Apache-2.0
-repository-code: "https://github.com/loganeberwein/erdos-proofs"
+repository-code: "https://github.com/loganeberwein/open-problems"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.24241058"
