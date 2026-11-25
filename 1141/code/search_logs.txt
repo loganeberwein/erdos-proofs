@@ -1,0 +1,68 @@
+FOUND 3
+FOUND 4
+FOUND 6
+FOUND 8
+FOUND 12
+FOUND 14
+FOUND 18
+FOUND 20
+FOUND 24
+FOUND 30
+FOUND 32
+FOUND 38
+FOUND 42
+FOUND 48
+FOUND 54
+FOUND 60
+FOUND 62
+FOUND 68
+FOUND 72
+FOUND 80
+FOUND 84
+FOUND 90
+FOUND 98
+FOUND 108
+FOUND 110
+FOUND 132
+FOUND 138
+FOUND 140
+FOUND 150
+FOUND 180
+FOUND 182
+FOUND 198
+FOUND 252
+FOUND 318
+FOUND 360
+FOUND 398
+FOUND 468
+FOUND 570
+FOUND 572
+FOUND 930
+FOUND 1722
+range [2,1000000000): candidates with n-1 prime: 50847534, found 41
+range [1000000000,52000000000): candidates with n-1 prime: 2149929902, found 0
+range [52000000000,100000000000): candidates with n-1 prime: 1917277377, found 0
+range [100000000000,155000000000): candidates with n-1 prime: 2151548607, found 0
+range [155000000000,210000000000): candidates with n-1 prime: 2121431171, found 0
+range [210000000000,265000000000): candidates with n-1 prime: 2099949280, found 0
+range [265000000000,320000000000): candidates with n-1 prime: 2083324509, found 0
+range [320000000000,325000000000): candidates with n-1 prime: 188684947, found 0
+range [325000000000,330000000000): candidates with n-1 prime: 188582900, found 0
+range [330000000000,377500000000): candidates with n-1 prime: 1786303291, found 0
+range [377500000000,425000000000): candidates with n-1 prime: 1777873345, found 0
+range [425000000000,472500000000): candidates with n-1 prime: 1770460564, found 0
+range [472500000000,520000000000): candidates with n-1 prime: 1763834543, found 0
+range [520000000000,575000000000): candidates with n-1 prime: 2034920032, found 0
+range [575000000000,630000000000): candidates with n-1 prime: 2027713508, found 0
+range [630000000000,685000000000): candidates with n-1 prime: 2021206045, found 0
+range [685000000000,740000000000): candidates with n-1 prime: 2015260227, found 0
+range [740000000000,785000000000): candidates with n-1 prime: 1644762262, found 0
+range [785000000000,830000000000): candidates with n-1 prime: 1641315874, found 0
+range [830000000000,875000000000): candidates with n-1 prime: 1638071763, found 0
+range [875000000000,920000000000): candidates with n-1 prime: 1635002564, found 0
+range [920000000000,965000000000): candidates with n-1 prime: 1632109191, found 0
+range [965000000000,1010000000000): candidates with n-1 prime: 1629342790, found 0
+range [1010000000000,1055000000000): candidates with n-1 prime: 1626719430, found 0
+range [1055000000000,1100000000000): candidates with n-1 prime: 1624231761, found 0
+range [1100000000000,1140000000000): candidates with n-1 prime: 1441728951, found 0
+range [1140000000000,1180000000000): candidates with n-1 prime: 1439928587, found 0
