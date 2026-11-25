@@ -1,0 +1,91 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}\newtheorem*{remark}{Remark}
+\title{1722 is the largest $n$ with $n-k^2$ prime for all $k$ coprime to $n$ (Erd\H{o}s Problem \#1141)}
+\author{Logan Eberwein}
+\address{Independent Researcher. ORCID 0009-0004-5650-9313}
+\date{24 November 2026}
+\begin{document}
+\begin{abstract}
+Let $S$ be the set of integers $n\ge 2$ such that $n-k^2$ is prime for every $k\ge1$ with $k^2<n$ and $(k,n)=1$. Alexeev, Putterman, Sawhney, Sellke and Valiant proved that $S$ is finite, but their argument goes through Siegel's theorem and gives no bound. Assuming the Generalized Riemann Hypothesis for Dirichlet $L$-functions, which has since been proved by Alp\"oge, we show that $S$ consists of exactly the $41$ known terms of OEIS A214583; in particular $1722$ is the largest. The proof combines an explicit Ankeny-type bound for a small prime $p\nmid n$ modulo which $n$ is a square, a sieve count over residue classes modulo $6p$, and an exhaustive search below $1.18\cdot10^{12}$.
+\end{abstract}
+\maketitle
+
+\section{Statement}
+Erd\H{o}s asked (see \cite{Va99} and Erd\H{o}s Problem \#1141) whether $968$ is the largest $n$ with this property. That is false ($968-9=7\cdot137$), and the computationally known terms (A214583) end at $1722$. The question of infinitude was settled in \cite{APSSV} via a theorem of Pollack \cite{Po17}.
+
+\begin{theorem}\label{main}
+Assume GRH for Dirichlet $L$-functions. Then
+\[S=\{3,4,6,8,12,14,18,20,24,30,32,38,42,48,54,60,62,68,72,80,84,90,98,108,110,132,138,140,\]
+\[150,180,182,198,252,318,360,398,468,570,572,930,1722\}.\]
+\end{theorem}
+Since GRH for Dirichlet $L$-functions is now a theorem \cite{Al26}, the conclusion holds unconditionally, to the extent that \cite{Al26} is accepted.
+
+Throughout, $\omega(n)$ is the number of distinct prime factors of $n$, $\Lambda$ the von Mangoldt function and $\psi(y)=\sum_{m\le y}\Lambda(m)$.
+
+\section{Reduction}
+Since $k=1$ is coprime to $n$, $n-1$ must be prime. If $n\ge5$ is odd, $n-1$ is even and greater than $2$; if $n=u^2$ with $u\ge3$, then $n-1=(u-1)(u+1)$. Hence every $n\in S$ with $n>4$ is even and not a square.
+
+\section{A small prime modulo which $n$ is a square}
+Let $n>4$ be even and not a square, write $n=u^2d$ with $d>1$ squarefree, let $D$ be the discriminant of $\mathbb{Q}(\sqrt d)$ and $\chi=\chi_D$ the associated primitive real character, of conductor $f=|D|$. Then $f\mid 4n$, and for odd primes $p\nmid n$ we have $\chi(p)=(d/p)$, so $n$ is a nonzero square mod $p$ if and only if $\chi(p)=1$. Since $D>0$, the only conductors below $10$ are $f=5$ ($d=5$) and $f=8$ ($d=2$).
+
+\begin{lemma}[Lippmann--McGown {\cite[Prop.~1]{LM}}]\label{LM}
+Assume GRH. Let $X>X_0\ge10$. Then
+$\bigl|\sum_{m\le X}\Lambda(m)(1-m/X)-X/2\bigr|\le C_1(X_0)\sqrt X$, and for every non-principal primitive character $\chi$ of modulus $m\ge m_0$,
+$\bigl|\sum_{k\le X}\Lambda(k)\chi(k)(1-k/X)\bigr|\le C_2(m_0,X_0)\sqrt X\log m$.
+For $X_0=2^{11}$: $C_1=0.047$, and (taking the larger of the even and odd tables) $C_2=1.541,1.381,1.217,1.105,1.026,0.969,0.927,0.896,0.874$ for $m_0=10,16,32,\dots,2048$.
+\end{lemma}
+
+\begin{lemma}\label{A}
+Let $q=4n$, $\omega=\omega(n)$, and let $x>2^{11}$. Suppose every prime $p\le x$ with $p\nmid q$ has $\chi(p)=-1$. Then
+\[ \frac x2-0.047\sqrt x-2\omega\log x-A\sqrt x-2.07766\sqrt x\le 0, \]
+where $A=\max_{\text{rows } m_0\le f} C_2(m_0)\log\min(m_0',f)$, with $m_0'$ the next row ($m_0'=\infty$ for the last row). In particular $A\le\max(6.9,\;0.874\log 4n)$ when $f\ge10$.
+\end{lemma}
+\begin{proof}
+Let $T=\sum_{m\le x}\Lambda(m)(\chi_0(m)+\chi(m))(1-m/x)$, with $\chi_0$ principal mod $q$. For $m=p^k$ with $p\nmid q$, $\chi_0(m)+\chi(m)=1+(-1)^k$, so only even $k$ contribute, giving at most $2\psi(\sqrt x)\le2.07766\sqrt x$ by Rosser--Schoenfeld ($\psi(y)<1.03883y$). Prime powers of primes dividing $q$ contribute at most $\omega\log x$. Hence $T\le2.07766\sqrt x+\omega\log x$. On the other hand, by Lemma~\ref{LM}, and since removing the prime powers of primes dividing $q$ costs at most $\omega\log x$,
+$T\ge x/2-0.047\sqrt x-\omega\log x-A\sqrt x$. The bound on $A$ follows since $C_2(m_0)\log m_0'\le 6.83$ for every row below $2048$, and for $f\ge2048$, $0.874\log f\le0.874\log4n$.
+\end{proof}
+
+For $f\ge10$, let $X(n)$ be any $x>2^{11}$ violating the inequality of Lemma~\ref{A} with $\omega$ replaced by an upper bound for $\omega(n)$. For $f\in\{5,8\}$, every prime $p\equiv1\pmod f$ has $\chi(p)=1$; let $X(n)$ exceed the $(\omega+1)$-st such prime. In both cases there is an odd prime $p\le X(n)$ with $p\nmid n$ and $\chi(p)=1$ (for $f\in\{5,8\}$ because $n$ has at most $\omega$ odd prime factors).
+
+\section{Counting good $k$}
+Fix such a $p$ and $r$ with $r^2\equiv n\pmod p$, $p\nmid r$. Then $p\mid n-k^2$ for $k\equiv\pm r\pmod p$, two distinct nonzero classes. Since $n$ is even, $k$ must be odd; if $3\mid n$ also $3\nmid k$. By the Chinese remainder theorem this gives $4$ classes mod $6p$ if $3\mid n$ and $6$ classes if $3\nmid n$ (if $p=3$, then $3\nmid n$). Let $K=\lfloor\sqrt n\rfloor-1$ and $T_0=\lfloor K/(6X(n))\rfloor$. Each class is an arithmetic progression with $Y\ge T_0$ terms in $[1,K]$.
+
+\begin{lemma}\label{B}
+Let $P$ be the set of primes $\ell\ge5$ dividing $n$, split as $P_1$ ($\ell\le y$, $|P_1|=j$) and $P_2$ ($\ell>y$, $|P_2|=m$). Put $D=\prod_{\ell\in P_1}(1-1/\ell)$, $\Sigma=\sum_{\ell\in P_2}1/\ell$. Then each class contains at least $Y(D-\Sigma)-2^j-m$ integers $k$ coprime to $n$. If $g:=T_0D-2^j-(T_0+1)\Sigma-m>0$, the count is at least $g$.
+\end{lemma}
+\begin{proof}
+Inclusion--exclusion over $P_1$ on a progression of length $Y$ (all $\ell\in P$ are coprime to $6p$) leaves at least $YD-2^j$ terms; each $\ell\in P_2$ removes at most $Y/\ell+1$ more. If $g>0$ then $D>\Sigma$, so $Y(D-\Sigma)\ge T_0(D-\Sigma)\ge g$.
+\end{proof}
+Every such $k$ satisfies $0<n-k^2\equiv0\pmod p$, so $n-k^2=p$ or $n-k^2\ge2p$ is composite. At most one $k$ has $n-k^2=p$. Hence two good $k$ in total show $n\notin S$. In the worst case $P_1$ and $P_2$ consist of the smallest admissible primes, and $|P|\le\omega-2$ if $3\mid n$, $\le\omega-1$ otherwise.
+
+\section{The range $n\ge1.165\cdot10^{12}$}
+\subsection*{Finite range} We cover $[1.1649\cdot10^{12},10^{20050}]$ by $1188$ intervals $[N_1,N_2]$. On each we use $q=4N_2$ and $\omega_{\max}(N_2)$ (the largest $\omega$ of an integer $\le N_2$, from primorials) in Lemma~\ref{A}, $K$ from $N_1$, and Lemma~\ref{B} with the worst-case prime sets (full inclusion--exclusion for very large $n$). The total number of good $k$ is at least $2$ on every interval; the minimum is $3.02$, at $1.1649\cdot10^{12}$. Computations use \texttt{mpmath} at 50 digits (code: \texttt{lemA2.py}, \texttt{final2.py}).
+
+\subsection*{Tail} Let $n\ge10^{20050}$, $t=\log n\ge46166$, $L=\log4n$. Robin's bound gives $\omega(n)\le1.3841\,t/\log t$ \cite{Ro83}. Take $x=(2L)^2$. With $A\le0.874L$, the expression in Lemma~\ref{A} is at least
+$2L^2-1.748L^2-4.25L-5.54\,t\log(2L)/\log t\ge0.252L^2-10.4L>0$,
+using $\log(2L)/\log t\le1.1$. For $f\in\{5,8\}$, Bennett--Martin--O'Bryant--Rechnitzer \cite{BMOR} give $|\theta(x;q,a)-x/\varphi(q)|<x/(160\log x)$ for $3\le q\le10^5$, $x\ge8\cdot10^9$. Hence at $x=4L^2$ the number of primes $\equiv1\pmod f$ up to $x$ is at least $0.24x/\log x>2t>\omega+1$. So $X(n)\le4L^2$ in all cases.
+
+With full inclusion--exclusion over $P$, each class has at least $a\varphi'-2^{\omega}$ good $k$, where $a=\sqrt n/(6X)-2$ and $\varphi'=\prod_{\ell\in P}(1-1/\ell)\ge\varphi(n)/n\ge(e^\gamma\log t+2.51/\log t)^{-1}$ \cite{RS62}. Taking logarithms,
+$\log(a\varphi')-\omega\log2\ge0.41t-3\log(t+2)-4$, which is increasing in $t$ and about $1.9\cdot10^4$ at $t=46166$. (\texttt{tail.py} checks the exact inequalities at sample points as a sanity check.)
+
+\section{The range $n<1.18\cdot10^{12}$}
+An exhaustive search (\texttt{s.c}) tests every $n$ in $[2,1.18\cdot10^{12})$ with $n-1$ prime. It uses a segmented sieve whose window covers $n-k^2$ for $k<200$, and deterministic Miller--Rabin with the first $12$ prime bases (valid below $3.18\cdot10^{23}$) for larger $k$. It finds exactly the $41$ elements of Theorem~\ref{main}, all below $10^9$; about $4.4\cdot10^{10}$ candidates $n$ were tested. Logs are in \texttt{search\_logs.txt}. The search output on $[2,2\cdot10^6)$ was checked against an independent brute force. This, with Section~5, proves Theorem~\ref{main}. \qed
+
+\section*{Use of AI tools}
+Claude (Anthropic) was used as a tool: it wrote the search and verification code, carried out the numerical checks, and ran two independent adversarial reviews of the argument, whose findings (an incorrect transcription of the term list, a misstated class-size bound in Lemma~\ref{B}, and the missing tail and small-conductor cases) were corrected. The author takes responsibility for the result.
+
+\begin{thebibliography}{99}
+\bibitem{Al26} L. Alp\"oge, Note on the Riemann Hypothesis (2026), \url{https://alpo.ge/remark.pdf}.
+\bibitem{APSSV} B. Alexeev, M. Putterman, M. Sawhney, M. Sellke, G. Valiant, Short proofs in combinatorics, probability and number theory II, arXiv:2604.06609 (2026).
+\bibitem{BMOR} M. A. Bennett, G. Martin, K. O'Bryant, A. Rechnitzer, Explicit bounds for primes in arithmetic progressions, Illinois J. Math. 62 (2018), 427--532.
+\bibitem{LM} M. E. Lippmann, K. J. McGown, The counting function for Elkies primes, J. Number Theory (2025), doi:10.1016/j.jnt.2024.12.009; arXiv:2311.17231.
+\bibitem{Po17} P. Pollack, Bounds for the first several prime character nonresidues, Proc. Amer. Math. Soc. 145 (2017), 2815--2826.
+\bibitem{Ro83} G. Robin, Estimation de la fonction de Tchebychef $\theta$ sur le $k$-i\`eme nombre premier et grandes valeurs de la fonction $\omega(n)$, Acta Arith. 42 (1983), 367--389.
+\bibitem{RS62} J. B. Rosser, L. Schoenfeld, Approximate formulas for some functions of prime numbers, Illinois J. Math. 6 (1962), 64--94.
+\bibitem{Va99} Various, Some of Paul's favorite problems, booklet, Budapest (1999).
+\end{thebibliography}
+\end{document}
