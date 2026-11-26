@@ -1,0 +1,2 @@
+N=10000000: n in (72,N] passing k in (1, 2, 4, 8) filter: 284; not of chain form: [] (count 0)
+solutions n <= 10000000 : [2, 3, 4, 5, 6, 8, 10, 12, 24]

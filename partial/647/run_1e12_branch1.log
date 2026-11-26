@@ -1,0 +1,6 @@
+branch 1: admissible residues 49140 / 9699690, w <= 124999999999
+small chain w=2 n=24 fails_at_k=0 deficit=2
+SOLUTION n=24
+small chain w=5 n=48 fails_at_k=3 deficit=3
+branch 1 done: 4-prime chains=1645715 solutions=0
+branch 2: admissible residues 49140 / 9699690, w <= 62499999999
