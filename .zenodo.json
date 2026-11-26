@@ -1,0 +1,29 @@
+{
+  "title": "open-problems: partial results, verified computations and kernel cards for open Erdős problems",
+  "upload_type": "software",
+  "version": "partial-v1.0",
+  "license": "Apache-2.0",
+  "creators": [
+    {
+      "name": "Eberwein, Logan",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0004-5650-9313"
+    }
+  ],
+  "description": "<p>Proofs, partial results, reproducible computations and documented dead ends on open mathematics problems, mostly Erdős problems (erdosproblems.com). Complete solutions are in the numbered top-level folders (1139/, 1141/). Partial results are in partial/: one folder per problem, each with a README in which every item carries exactly one label ([Proved], [Reduction], [Computed], [Heuristic]), plus the code and logs that reproduce every computation.</p><p>This release includes a 10-problem benchmark of the shrink-to-kernel method, which settles every computable or reducible part of an open problem, has a fresh AI agent referee the results, and reduces what remains to a short statement of the missing step (a kernel card). Problems: #366, #364, #1094, #396, #680, #891, #458, #647, #317 (part 2), and a blind control, #1196, whose 2026 solution was not read until the blind run was written. Highlights: a new necessary condition for #647 (any solution n &gt; 72 lies on a 4-term prime chain) with no solution up to 10^12; #317 part 2 verified for all n up to 10^10; #458 counts reproduced to 2^64 and 10^30 with rewritten code; #891 for k = 2 verified for 4373 &le; n &le; 10^100; #1094 exceptions complete for k &le; 48. None of these problems is claimed solved.</p><p>AI use: Claude (Anthropic) was used as a tool for the mathematics, computation and adversarial review; it is not an author.</p>",
+  "keywords": [
+    "Erdős problems",
+    "number theory",
+    "AI for mathematics",
+    "computational verification",
+    "open problems",
+    "partial results"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/loganeberwein/open-problems/tree/partial-v1.0",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
