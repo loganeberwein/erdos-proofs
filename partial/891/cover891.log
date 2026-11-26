@@ -1,0 +1,20 @@
+M=12: 3 usable primes up to 5000000: [5, 7, 13]
+  j0/j1: uncovered 13 of 144 residue pairs (9.028%), primes used 3
+  j4/j5: uncovered 14 of 144 residue pairs (9.722%), primes used 3
+  j2: uncovered 26 of 144 residue pairs (18.056%), primes used 3
+  j3: uncovered 28 of 144 residue pairs (19.444%), primes used 3
+M=360: 12 usable primes up to 5000000: [5, 7, 11, 13, 19, 31, 37, 41, 61, 73, 181, 241]
+  j0/j1: uncovered 4952 of 129600 residue pairs (3.821%), primes used 9
+  j4/j5: uncovered 5416 of 129600 residue pairs (4.179%), primes used 11
+  j2: uncovered 9840 of 129600 residue pairs (7.593%), primes used 9
+  j3: uncovered 9372 of 129600 residue pairs (7.231%), primes used 11
+M=720: 15 usable primes up to 5000000: [5, 7, 11, 13, 17, 19, 31, 37, 41, 61, 73, 97, 181, 241, 577]
+  j0/j1: uncovered 13307 of 518400 residue pairs (2.567%), primes used 12
+  j4/j5: uncovered 17934 of 518400 residue pairs (3.459%), primes used 13
+  j2: uncovered 33120 of 518400 residue pairs (6.389%), primes used 10
+  j3: uncovered 30816 of 518400 residue pairs (5.944%), primes used 12
+M=2520: 23 usable primes up to 5000000: [5, 7, 11, 13, 19, 29, 31, 37, 41, 43, 61, 71, 73, 127, 181, 211, 241, 281, 337, 421, 631, 1009, 2521]
+  j0/j1: uncovered 192094 of 6350400 residue pairs (3.025%), primes used 17
+  j4/j5: uncovered 195290 of 6350400 residue pairs (3.075%), primes used 20
+  j2: uncovered 395604 of 6350400 residue pairs (6.230%), primes used 16
+  j3: uncovered 390732 of 6350400 residue pairs (6.153%), primes used 17
