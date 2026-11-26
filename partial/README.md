@@ -33,6 +33,7 @@ Each folder also lists the routes that were tried and why they failed. They are 
 | 711 | Erdős #711(i) | ₹1000 | [Reduction] CRT/Hall form; [Computed] the natural length-5 path encoding grows like N^3 |
 | 835 | Erdős #835 | – | [Proved] symmetry-matching lemma; 176 symmetry types at k = 16 |
 | 850 | Erdős #850 | – | [Reduction] to rad((n−1)n(n+1)) ≥ n−1 |
+| 891 | Erdős #891 (intervals of length p₁⋯p_k contain an n with ω(n) > k) | – (conjectures.io bounty target) | [Proved] anchor reduction: every failing window sits around a p_k-smooth multiple of p₁⋯p_k; [Computed] k = 2 holds for 4373 ≤ n ≤ 10^100 |
 | 985 | Erdős #985 | – | follows from the literature under GRH (not our theorem) |
 | 1094 | Erdős #1094 (least prime factor of C(n,k)) | – (conjectures.io bounty target) | [Proved] anchor lemma (n ≥ k² exceptions sit at divisors of k!); [Computed] exception list complete for k ≤ 48 |
 | althofer-9n1 | Althöfer 9n+1 prize | €50 | [Computed] no positive cycle with minimum < 4·10^6 and length ≤ 300 |
