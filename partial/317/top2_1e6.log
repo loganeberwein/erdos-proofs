@@ -1,0 +1,8 @@
+top1 fail n=8 p=7 r=1
+top1 fail n=11 p=11 r=1
+top1 fail n=29 p=29 r=1
+top1 fail n=169 p=167 r=1
+top1 fail n=343 p=337 r=1
+top1 fail n=787 p=787 r=1
+top1 fail n=15773 p=15773 r=1
+N=1000000 top1-fail n count=37 (distinct runs 7), top2-fail n count=0

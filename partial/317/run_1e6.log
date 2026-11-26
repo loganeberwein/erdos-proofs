@@ -1,0 +1,1 @@
+N=1000000: every n in [5,N] has a witness prime p in (n/2,n] with L/p mod p not in {1,p-1}; group rebuilds=19, enlargements=0, survivors=0

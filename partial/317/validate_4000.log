@@ -1,0 +1,5 @@
+T=1 match=yes count=0
+T=3 match=yes count=8
+T=6 match=yes count=18
+T=10 match=yes count=35
+T=20 match=yes count=51
