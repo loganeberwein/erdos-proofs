@@ -1,0 +1,6 @@
+k=1 theta=0.50: n<=20000000 with all n-i n^theta-smooth: 1374500, of which divisible: 152805 (11.1%)
+k=2 theta=0.50: n<=20000000 with all n-i n^theta-smooth: 332958, of which divisible: 11528 (3.5%)
+k=3 theta=0.50: n<=20000000 with all n-i n^theta-smooth: 77705, of which divisible: 823 (1.1%)
+k=1 theta=0.33: n<=20000000 with all n-i n^theta-smooth: 20711, of which divisible: 4026 (19.4%)
+k=2 theta=0.33: n<=20000000 with all n-i n^theta-smooth: 406, of which divisible: 43 (10.6%)
+k=3 theta=0.33: n<=20000000 with all n-i n^theta-smooth: 9, of which divisible: 1 (11.1%)
