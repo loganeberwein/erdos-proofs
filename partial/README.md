@@ -22,16 +22,19 @@ Each folder also lists the routes that were tried and why they failed. They are 
 | 317 | Erdős #317 part 2 | – | [Computed] n ≤ 10^6 |
 | 364 | Erdős #364 (three consecutive powerful numbers) | – (conjectures.io bounty target) | [Computed] no triple with middle < 10^5000 whose outer terms' cube parts multiply to ≤ 10^6 (all Pell families B ≤ 10^6) |
 | 366 | Erdős #366 (2-full n, 3-full n+1) | – (conjectures.io bounty target) | [Computed] none with n < 10^24; none of any size on 655 of 671 shape curves (b ≤ 100, K ≤ 3888) |
+| 396 | Erdős #396 (n(n−1)⋯(n−k) divides C(2n,n)) | – (conjectures.io bounty target) | [Proved] block must be √(2n)-smooth; [Computed] exact counts to 10^8 (slowly rising densities); kernel: lower bound for k+1 consecutive smooth integers + digit equidistribution |
 | 458 | Erdős #458 | – | [Computed] no counterexample below 2^64; [Proved] conditional theorem |
 | 488 | Erdős #488 | – | [Proved] max A ≤ n < 4·min A |
 | 634 | Erdős #634 (triangles cut into N congruent triangles) | $25 | [Computed] structure of the open cases |
 | 647 | Erdős #647 | £25 | [Computed] no solution in (24, 10^10] |
+| 680 | Erdős #680(i) (lpf(n+k) > k²+1) | – (conjectures.io bounty target) | [Computed] exceptions ≤ 2·10^8 are exactly {1,3,7,13,23,31,113,115}; [Proved] holds with k^1.904 unconditionally and k²/(4 log²(k+2)) via RH |
 | 684 | Erdős #684 | – | [Proved] exceptional-set bound |
 | 699 | Erdős #699 | – | [Proved] j = n/2 case except i a prime ≥ 7 |
 | 711 | Erdős #711(i) | ₹1000 | [Reduction] CRT/Hall form; [Computed] the natural length-5 path encoding grows like N^3 |
 | 835 | Erdős #835 | – | [Proved] symmetry-matching lemma; 176 symmetry types at k = 16 |
 | 850 | Erdős #850 | – | [Reduction] to rad((n−1)n(n+1)) ≥ n−1 |
 | 985 | Erdős #985 | – | follows from the literature under GRH (not our theorem) |
+| 1094 | Erdős #1094 (least prime factor of C(n,k)) | – (conjectures.io bounty target) | [Proved] anchor lemma (n ≥ k² exceptions sit at divisors of k!); [Computed] exception list complete for k ≤ 48 |
 | althofer-9n1 | Althöfer 9n+1 prize | €50 | [Computed] no positive cycle with minimum < 4·10^6 and length ≤ 300 |
 | althofer-stochastic-collatz | Althöfer stochastic Collatz prize | €300 | [Reduction] prize ⇐ block-drift lemma; [Computed] the lemma holds with margin on every start tested |
 
