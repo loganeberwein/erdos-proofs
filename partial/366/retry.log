@@ -1,0 +1,54 @@
+PARI stack size set to 2000000000 bytes, maximum size set to 2000003072
+b=37 K=1 retry: rank 0 -> []
+b=65 K=1 retry: rank 0 -> []
+b=86 K=1 retry: rank 0 -> []
+b=41 K=16 retry: rank 0 -> []
+b=58 K=32 retry: rank 0 -> []
+b=82 K=32 retry: rank 0 -> []
+b=85 K=32 retry: rank 0 -> []
+b=58 K=81 retry: rank 0 -> []
+b=70 K=81 retry: rank 0 -> []
+b=73 K=81 retry: rank 0 -> []
+b=83 K=81 retry: rank 0 -> []
+b=85 K=81 retry: rank 0 -> []
+b=17 K=243 retry: rank 0 -> []
+b=26 K=243 retry: rank 0 -> []
+b=42 K=243 retry: rank 0 -> []
+b=55 K=243 retry: rank 0 -> []
+b=69 K=243 retry: rank 0 -> []
+b=74 K=243 retry: rank 0 -> []
+b=94 K=243 retry: rank 1 -> []
+b=97 K=243 retry: UNRESOLVED points 0 vs rank 1
+b=10 K=625 retry: rank 0 -> []
+b=73 K=625 retry: UNRESOLVED points 0 vs rank 1
+b=89 K=625 retry: rank 0 -> []
+b=97 K=625 retry: UNRESOLVED points 0 vs rank 1
+b=43 K=1296 retry: UNRESOLVED points 0 vs rank 1
+b=58 K=1296 retry: rank 0 -> []
+b=67 K=1296 retry: UNRESOLVED points 0 vs rank 1
+b=78 K=1296 retry: UNRESOLVED points 0 vs rank 1
+b=82 K=1296 retry: UNRESOLVED rank in [0,2]
+b=87 K=1296 retry: rank 0 -> []
+b=94 K=1296 retry: rank 0 -> []
+b=14 K=2401 retry: rank 0 -> []
+b=65 K=2401 retry: rank 0 -> []
+b=78 K=2401 retry: rank 0 -> []
+b=86 K=2401 retry: rank 0 -> []
+b=93 K=2401 retry: UNRESOLVED points 0 vs rank 1
+b=10 K=2592 retry: rank 0 -> []
+b=13 K=2592 retry: rank 0 -> []
+b=34 K=2592 retry: rank 0 -> []
+b=69 K=2592 retry: UNRESOLVED points 0 vs rank 1
+b=70 K=2592 retry: rank 0 -> []
+b=94 K=2592 retry: UNRESOLVED rank in [0,2]
+b=97 K=2592 retry: UNRESOLVED rank in [0,2]
+b=23 K=3125 retry: rank 0 -> []
+b=59 K=3125 retry: rank 0 -> []
+b=62 K=3125 retry: UNRESOLVED points 0 vs rank 1
+b=77 K=3125 retry: UNRESOLVED points 0 vs rank 1
+b=46 K=3888 retry: UNRESOLVED points 0 vs rank 1
+b=53 K=3888 retry: rank 0 -> []
+b=61 K=3888 retry: rank 1 -> []
+b=70 K=3888 retry: UNRESOLVED points 0 vs rank 1
+b=79 K=3888 retry: rank 0 -> []
+b=94 K=3888 retry: UNRESOLVED points 0 vs rank 1
