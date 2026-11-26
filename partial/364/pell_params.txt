@@ -1,0 +1,1 @@
+args: pell364.py BMAX=1000000 DIG=5000 PMAX=10000 nparts=2
