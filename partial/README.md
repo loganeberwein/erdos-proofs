@@ -19,14 +19,14 @@ Each folder also lists the routes that were tried and why they failed. They are 
 | 261 | Erdős #261 (sums of a/2^a) | – | [Reduction] continuum question for x = 1 ⇔ infinitely many zeros of e_{n+1} = \|2e_n − n\|; 17 zeros to 2.3×10^11; zeros forced into 6 residues mod 64 |
 | 273 | Erdős #273 (coverings by moduli p−1) | – | [Reduction] parity reduction and 2-adic path reframing |
 | 288 | Erdős #288 (harmonic sums of two intervals) | – | [Proved] no prime in (N/2, N]; [Computed] all endpoints ≤ 7000 |
-| 317 | Erdős #317 part 2 | – | [Computed] n ≤ 10^6 |
+| 317 | Erdős #317 part 2 | – | [Computed] every n in [5, 10^10] has a top prime p with lcm(1..n)/p ≢ ±1 (mod p), so no signed sum equals ±1/lcm; [Reduction] top-prime form |
 | 364 | Erdős #364 (three consecutive powerful numbers) | – (conjectures.io bounty target) | [Computed] no triple with middle < 10^5000 whose outer terms' cube parts multiply to ≤ 10^6 (all Pell families B ≤ 10^6) |
 | 366 | Erdős #366 (2-full n, 3-full n+1) | – (conjectures.io bounty target) | [Computed] none with n < 10^24; none of any size on 655 of 671 shape curves (b ≤ 100, K ≤ 3888) |
 | 396 | Erdős #396 (n(n−1)⋯(n−k) divides C(2n,n)) | – (conjectures.io bounty target) | [Proved] block must be √(2n)-smooth; [Computed] exact counts to 10^8 (slowly rising densities); kernel: lower bound for k+1 consecutive smooth integers + digit equidistribution |
 | 458 | Erdős #458 | – | [Computed] no counterexample below 2^64; [Proved] conditional theorem |
 | 488 | Erdős #488 | – | [Proved] max A ≤ n < 4·min A |
 | 634 | Erdős #634 (triangles cut into N congruent triangles) | $25 | [Computed] structure of the open cases |
-| 647 | Erdős #647 | £25 | [Computed] no solution in (24, 10^10] |
+| 647 | Erdős #647 | £25 ($44) | [Proved] any solution n > 72 sits on a 4-prime Cunningham-type chain; [Computed] no solution in (24, 10^12] |
 | 680 | Erdős #680(i) (lpf(n+k) > k²+1) | – (conjectures.io bounty target) | [Computed] exceptions ≤ 2·10^8 are exactly {1,3,7,13,23,31,113,115}; [Proved] holds with k^1.904 unconditionally and k²/(4 log²(k+2)) via RH |
 | 684 | Erdős #684 | – | [Proved] exceptional-set bound |
 | 699 | Erdős #699 | – | [Proved] j = n/2 case except i a prime ≥ 7 |
@@ -36,6 +36,7 @@ Each folder also lists the routes that were tried and why they failed. They are 
 | 891 | Erdős #891 (intervals of length p₁⋯p_k contain an n with ω(n) > k) | – (conjectures.io bounty target) | [Proved] anchor reduction: every failing window sits around a p_k-smooth multiple of p₁⋯p_k; [Computed] k = 2 holds for 4373 ≤ n ≤ 10^100 |
 | 985 | Erdős #985 | – | follows from the literature under GRH (not our theorem) |
 | 1094 | Erdős #1094 (least prime factor of C(n,k)) | – (conjectures.io bounty target) | [Proved] anchor lemma (n ≥ k² exceptions sit at divisors of k!); [Computed] exception list complete for k ≤ 48 |
+| 1196 | Erdős #1196 (blind control, solved 2026) | – | Blind shrink-to-kernel run vs the known von Mangoldt chain proof: kernel matched the expert hard step |
 | althofer-9n1 | Althöfer 9n+1 prize | €50 | [Computed] no positive cycle with minimum < 4·10^6 and length ≤ 300 |
 | althofer-stochastic-collatz | Althöfer stochastic Collatz prize | €300 | [Reduction] prize ⇐ block-drift lemma; [Computed] the lemma holds with margin on every start tested |
 
