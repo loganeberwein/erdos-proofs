@@ -1,0 +1,4 @@
+targets (q^b, b>=5, 2^64<q^b<10^30): 90496
+distinct gaps visited: 90496
+gaps containing >= 2 proper prime powers: 0
+largest ratio (product of bases)/p_k: 3.824e-16

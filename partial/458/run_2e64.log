@@ -1,0 +1,6 @@
+GROUP p_k=7 first=8 count=2 prod=6 ratio=0.857143
+GROUP p_k=23 first=25 count=2 prod=15 ratio=0.652174
+GROUP p_k=113 first=121 count=2 prod=55 ratio=0.486726
+GROUP p_k=2179 first=2187 count=2 prod=39 ratio=0.0178981
+GROUP p_k=32749 first=32761 count=2 prod=362 ratio=0.0110538
+LIMIT=2^64 powers=203481024 (squares 203280221, higher 200803) gaps_with_>=1_power=203481019 gaps_with_>=2_powers=5
