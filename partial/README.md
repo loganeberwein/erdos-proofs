@@ -20,6 +20,7 @@ Each folder also lists the routes that were tried and why they failed. They are 
 | 273 | Erdős #273 (coverings by moduli p−1) | – | [Reduction] parity reduction and 2-adic path reframing |
 | 288 | Erdős #288 (harmonic sums of two intervals) | – | [Proved] no prime in (N/2, N]; [Computed] all endpoints ≤ 7000 |
 | 317 | Erdős #317 part 2 | – | [Computed] n ≤ 10^6 |
+| 366 | Erdős #366 (2-full n, 3-full n+1) | – (conjectures.io bounty target) | [Computed] none with n < 10^24; none of any size on 655 of 671 shape curves (b ≤ 100, K ≤ 3888) |
 | 458 | Erdős #458 | – | [Computed] no counterexample below 2^64; [Proved] conditional theorem |
 | 488 | Erdős #488 | – | [Proved] max A ≤ n < 4·min A |
 | 634 | Erdős #634 (triangles cut into N congruent triangles) | $25 | [Computed] structure of the open cases |
